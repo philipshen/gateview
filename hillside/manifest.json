@@ -1,0 +1,24 @@
+{
+  "name": "Gateview",
+  "version": "1.0",
+  "description": "Passwordless sign in for your team.",
+  "manifest_version": 2,
+  "permissions": [
+    "identity"
+  ],
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://apis.google.com; object-src 'self';",
+  "oauth2": {
+    "client_id": "764207558015-2kekisq9ulolfutdh0a7ps331pf9spka.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "page": "background/background.html",
+    "persistent": true
+  }
+}

@@ -1,0 +1,69 @@
+:root {
+  --primary-color: #D94B0F;
+}
+
+.icon-button {
+  background-color: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+body {
+  min-width: 300px;
+  margin: 0;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+#navbar {
+  background-color: var(--primary-color);
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.navbar-buttons {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#navbar-right-buttons {
+  right: 4px;
+}
+
+#navbar-back-button {
+  left: 4px;
+}
