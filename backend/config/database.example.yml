@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+
+  pool: 5
+
+development:
+  <<: *default
+  database: gateview_development
+
+test:
+  <<: *default
+  database: gateview_test

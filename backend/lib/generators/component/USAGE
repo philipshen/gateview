@@ -1,0 +1,11 @@
+Description:
+    React Page Generator.
+
+Example:
+    rails generate component posts PostList
+
+    This will create:
+        app/javascripts/components/posts/children/PostList.jsx
+    It will be:
+        appContext wrapped.
+        some import statements.
