@@ -23,5 +23,5 @@ we don't believe should exist in 2020.
 
 Gateview is the simplest and most secure way for teams to access the web apps
 that they use. Teams can log in to accounts on Twitter, Slack, and Heroku
-without typing a username and password, ensure that their information is kept tightly
+without worrying about username and passwords, ensure that their information is kept tightly
 controlled and secured, and onboard and offboard employees in one click.
