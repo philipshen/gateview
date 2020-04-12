@@ -33,13 +33,7 @@ $(document).ready(() => {
     .catch(console.log);
 
   $("#test-twitter-btn").click(() => {
-    // Send a message to the background script
-    // Background script takes message and opens new tab with twitter.com with
-    // credentials
-    // ????????
-    // Profit
-
-    chrome.runtime.sendMessage({ action: "Poop" }); //callback will be invoked somewhere in the future
+    chrome.runtime.sendMessage({ action: "twitter-login" }); //callback will be invoked somewhere in the future
   });
 });
 

@@ -18,6 +18,9 @@ gem "dotenv-rails", "~> 2.7.5"
 gem "minitest-rails", "~> 6.0.0"
 gem "oj"
 
+gem "faraday"
+gem "faraday-cookie_jar"
+
 group :development do
   gem "awesome_print", "~> 1.8.0"
   gem "better_errors", "~> 2.6.0"
