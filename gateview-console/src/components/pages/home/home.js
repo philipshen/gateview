@@ -48,7 +48,7 @@ function Home(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
-  const [tab, setTab] = useState(0)
+  const [tab, setTab] = useState(1)
   
   // Temp dev flag
   const isAdmin = true

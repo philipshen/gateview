@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import ConfirmDialog from 'components/shared/dialogs/confirm-dialog'
 import { FormControl, FormControlLabel, FormGroup, FormLabel, Checkbox, TextField, makeStyles } from '@material-ui/core'
 
-// import { } from 'services/'
 import { flashError, flashSuccess } from 'components/global-flash'
 
 const useStyles = makeStyles(theme => ({
@@ -70,6 +69,7 @@ function AddTeamMemberDialog(props) {
                   name={ account } 
                 />
               }
+              key={ account }
               label={ account }
             />
           ))}

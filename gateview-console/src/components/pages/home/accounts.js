@@ -31,7 +31,7 @@ function Accounts(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
-  const [addAccountDialogOpen, setAddAccountDialogOpen] = useState(true)
+  const [addAccountDialogOpen, setAddAccountDialogOpen] = useState(false)
   
   // Temp dev flag
   const isInTeam = true
