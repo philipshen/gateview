@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
+import Apps from './apps'
 import Settings from './settings'
 import SwipeableViews from 'react-swipeable-views'
-import Apps from './apps'
+import Team from './team'
 import { Button, AppBar, Divider, Paper, Tab, Tabs, Typography, makeStyles } from '@material-ui/core'
 
 import { flashError } from 'components/global-flash'
@@ -50,7 +51,7 @@ function Home(props) {
   const [tab, setTab] = useState(0)
   
   // Temp dev flag
-  const isAdmin = false
+  const isAdmin = true
 
   if (!hasFetchedData) {
     setHasFetchedData(true)
@@ -73,6 +74,10 @@ function Home(props) {
               label='Apps' 
               style={ { color: 'white' } }
             />
+            {isAdmin && <Tab 
+              label='Team'
+              style={ { color: 'white' } }
+            />}
             <Tab 
               label='Settings' 
               style={ { color: 'white' } }
@@ -90,8 +95,14 @@ function Home(props) {
           >
             <Apps />
           </TabPanel>
-          <TabPanel 
+          {isAdmin && <TabPanel
             index={ 1 }
+            value={ tab }
+          >
+            <Team />
+          </TabPanel>}
+          <TabPanel 
+            index={ isAdmin ? 2 : 1 }
             value={ tab }
           >
             <Settings />

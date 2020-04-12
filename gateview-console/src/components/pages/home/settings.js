@@ -52,6 +52,7 @@ function Settings(props) {
           logout()
           props.history.push('/login')
         } }
+        style={ { color: 'white' } }
         variant='contained'
       >
         Sign Out
