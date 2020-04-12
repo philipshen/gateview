@@ -2,10 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.17.1)
-<<<<<<< HEAD
     byebug (11.1.1)
-=======
->>>>>>> Help
     multi_json (1.14.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -31,10 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   byebug
-=======
->>>>>>> Help
   sinatra
   sinatra-contrib
 
