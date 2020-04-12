@@ -1,0 +1,79 @@
+{
+  "name": "EXAMPLE",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
+    "axios": "^0.19.1",
+    "express": "^4.17.1",
+    "firebase": "^7.14.0",
+    "material-table": "^1.55.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-swipeable-views": "^0.13.9",
+    "redux": "^4.0.5",
+    "style-loader": "^1.1.3"
+  },
+  "engines": {
+    "node": "12.14.1"
+  },
+  "scripts": {
+    "start:dev": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "node server.js",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "yarn lint --fix",
+    "test:nocoverage": "jest",
+    "test": "jest --coverage"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@types/react": "^16.8.6",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
+    "expect": "^24.9.0",
+    "html-webpack-plugin": "^3.2.0",
+    "interpolate-html-plugin": "^3.0.0",
+    "jest": "^24.9.0",
+    "nock": "^11.7.2",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "react-test-renderer": "^16.12.0",
+    "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
