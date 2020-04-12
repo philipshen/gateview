@@ -16,7 +16,7 @@ Instagram, oh my!
 
 For each of these services, there's an accompanying set of credentials that are
 either shared with the team or are up to each employee to manage on their own.
-Both of these options come with tradeoffs in time costs and vulnerabilities that
+Both of these options come with tradeoffs in admin overhead and security vulnerabilities that
 we don't believe should exist in 2020.
 
 ## Solution
