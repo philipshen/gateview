@@ -14,7 +14,7 @@ import Login from 'components/pages/login'
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: '#D94B0F' },
+    primary: { main: '#FF6E31' },
     secondary: { main: '#4BDFFF' },
   },
 })
@@ -32,8 +32,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function App(props) {
-  const { actions } = props
-
   return (
     <ThemeProvider theme={ theme }>
       <CssBaseline />

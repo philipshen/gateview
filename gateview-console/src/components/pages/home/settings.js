@@ -10,8 +10,11 @@ import { flashError, flashSuccess } from 'components/global-flash'
 import { fetchCurrentUser, logout } from 'services/auth-service'
 
 const useStyles = makeStyles(theme => ({
+  container: {
+    padding: theme.spacing(2),
+  },
   section: {
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
   }
 }))
 
@@ -39,7 +42,7 @@ function Settings(props) {
   }
   
   return (
-    <div>
+    <div className={ classes.container }>
       <Typography className={ classes.section }>
         Logged in as {user.email}
       </Typography>

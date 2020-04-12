@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 import Settings from './settings'
 import SwipeableViews from 'react-swipeable-views'
-import { Button, AppBar, Box, Divider, Paper, Tab, Tabs, Typography, makeStyles } from '@material-ui/core'
+import Apps from './apps'
+import { Button, AppBar, Divider, Paper, Tab, Tabs, Typography, makeStyles } from '@material-ui/core'
 
 import { flashError } from 'components/global-flash'
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     marginTop: theme.spacing(4),
-    minWidth: '50%',
+    width: '50%'
   },
 }))
 
@@ -36,7 +37,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={props.value !== props.index}
     >
-      {props.value === props.index && <Box p={3}>{props.children}</Box>}
+      {props.value === props.index && props.children}
     </Typography>
   );
 }
@@ -46,8 +47,11 @@ function Home(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
-  const [tab, setTab] = useState(1)
+  const [tab, setTab] = useState(0)
   
+  // Temp dev flag
+  const isAdmin = false
+
   if (!hasFetchedData) {
     setHasFetchedData(true)
     Promise.all([
@@ -65,8 +69,14 @@ function Home(props) {
             onChange={ (_, tab) => setTab(tab) }
             variant='fullWidth'
           >
-            <Tab label='Team' />
-            <Tab label='Settings' />
+            <Tab 
+              label='Apps' 
+              style={ { color: 'white' } }
+            />
+            <Tab 
+              label='Settings' 
+              style={ { color: 'white' } }
+            />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -78,7 +88,7 @@ function Home(props) {
             index={ 0 }
             value={ tab }
           >
-            Team
+            <Apps />
           </TabPanel>
           <TabPanel 
             index={ 1 }
