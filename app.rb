@@ -6,8 +6,11 @@ require 'sinatra/reloader' if development?
 require 'net/http'
 require 'uri'
 
+<<<<<<< HEAD
 require 'byebug'
 
+=======
+>>>>>>> Help
 get '/test-twitter' do
   # Redirect to twitter logged in
   uri = URI.parse('https://twitter.com/sessions')
@@ -44,8 +47,11 @@ get '/test-twitter' do
     http.request(request)
   end
 
+<<<<<<< HEAD
   byebug
 
+=======
+>>>>>>> Help
   # response.code
   # response.body
 
