@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import Apps from './apps'
+import Accounts from './accounts'
 import Settings from './settings'
 import SwipeableViews from 'react-swipeable-views'
 import Team from './team'
-import { Button, AppBar, Divider, Paper, Tab, Tabs, Typography, makeStyles } from '@material-ui/core'
+import { AppBar, Paper, Tab, Tabs, Typography, makeStyles } from '@material-ui/core'
 
 import { flashError } from 'components/global-flash'
 
@@ -48,7 +48,7 @@ function Home(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
-  const [tab, setTab] = useState(0)
+  const [tab, setTab] = useState(1)
   
   // Temp dev flag
   const isAdmin = true
@@ -71,7 +71,7 @@ function Home(props) {
             variant='fullWidth'
           >
             <Tab 
-              label='Apps' 
+              label='Accounts' 
               style={ { color: 'white' } }
             />
             {isAdmin && <Tab 
@@ -93,7 +93,7 @@ function Home(props) {
             index={ 0 }
             value={ tab }
           >
-            <Apps />
+            <Accounts />
           </TabPanel>
           {isAdmin && <TabPanel
             index={ 1 }

@@ -5,9 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import AppBar from 'components/app-bar'
 import AuthRoute from 'components/authenticated-route'
-import Breadcrumbs from 'components/breadcrumbs'
 import GlobalFlash from 'components/global-flash'
-import SplashScreen from 'components/pages/splash-screen'
 
 import Home from 'components/pages/home/home'
 import Login from 'components/pages/login'
@@ -45,6 +43,9 @@ function App(props) {
             <AuthRoute component={ Home }
               exact
               path='/home' />
+            <AuthRoute component={ Home }
+              exact
+              path='/' />
           </Switch>
         </AppBar>
       </Router>

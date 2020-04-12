@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
+import ButtonBar from 'components/shared/button-bar'
 import { Button, List, ListItem, ListItemText, Typography, makeStyles } from '@material-ui/core'
 import { OpenInNew } from '@material-ui/icons'
 
-// import { } from 'services/'
 import { flashError, flashSuccess } from 'components/global-flash'
 
 const useStyles = makeStyles(theme => ({
@@ -13,11 +13,11 @@ const useStyles = makeStyles(theme => ({
   },
   section: {
     marginBottom: theme.spacing(2)
-  }
+  },
 }))
 
 const mapStateToProps = state => ({
-
+  
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -26,39 +26,24 @@ const mapDispatchToProps = dispatch => ({
   },
 })
 
-function AppListItem(props) {
-  const { app } = props
-  const styles = useStyles()
-
-  return (
-    <ListItem
-      button
-      onClick={ () => console.log(app.name) }
-    >
-      <ListItemText 
-        primary={ app.name }
-      />
-      <OpenInNew />
-    </ListItem>
-  )
-}
-
-function Apps(props) {
+function Accounts(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
   
   // Temp dev flag
   const isInTeam = true
-  const apps = [
+  const isAdmin = true
+
+  const accounts = [
     {
-      name: 'Slack'
+      app: 'Slack'
     },
     {
-      name: 'Instagram'
+      app: 'Instagram'
     },
     {
-      name: 'Twitter'
+      app: 'Twitter'
     }
   ]
 
@@ -71,14 +56,32 @@ function Apps(props) {
   
   if (isInTeam) {
     return (
-      <List>
-        {apps.map(app => (
-          <AppListItem 
-            app={ app }
-            key={ app.name } 
+      <div>
+        {isAdmin && 
+          <ButtonBar 
+            buttons={ [
+              {
+                title: 'Add Account',
+                onClick: () => console.log('Dialog')
+              }
+            ] }
           />
-        ))}
-      </List>
+        }
+        <List>
+          {accounts.map(account => (
+            <ListItem
+              button
+              key={ account.app }
+              onClick={ () => console.log(account.app) }
+            >
+              <ListItemText 
+                primary={ account.app }
+              />
+              <OpenInNew />
+            </ListItem>
+          ))}
+        </List>
+      </div>
     )
   } else {
     return (
@@ -103,4 +106,4 @@ function Apps(props) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Apps)
+export default connect(mapStateToProps, mapDispatchToProps)(Accounts)
