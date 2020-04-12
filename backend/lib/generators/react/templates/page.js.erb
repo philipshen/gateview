@@ -1,0 +1,27 @@
+import React, { Component } from "react"
+import App from "<%= ("../" * folder_deepness) << "commons/App.jsx" %>"
+import axios from 'axios'
+import {
+
+} from "<%= ("../" * folder_deepness) << "commons/App.jsx" %>"
+import {
+
+} from "@material-ui/core"
+
+class <%= action_name.classify %> extends Component {
+
+  constructor(props) {
+    super(props)
+  }
+
+  render () {
+    const { data, header } = this.props;
+    return (
+      <App appProps={this.props}>
+        <h1>{data.helloReact}</h1>
+      </App>
+    );
+  }
+}
+
+export default <%= action_name.classify %>

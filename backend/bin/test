@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+rubocop -a
+eslint app/javascript test/javascript --fix
+bin/yarn test
+bin/rails test
+
+GREEN='\033[0;32m'
+NOCOLOR='\033[0m'
+echo -e "\n${GREEN}Good to go!${NOCOLOR}"
