@@ -31,6 +31,10 @@ $(document).ready(() => {
   getCurrentUser()
     .then(({ user }) => _displayUserInfo(user))
     .catch(console.log)
+
+  $('#test-twitter-btn').click(() => {
+
+  })
 })
 
 function _displayUserInfo(user) {
