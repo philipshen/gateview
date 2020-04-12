@@ -1,3 +1,7 @@
+const storageKeys = {
+  userInfo: 'com.duo.userInfo'
+}
+
 const pages = {
   home: {
     htmlID: '#page-home',
@@ -17,10 +21,34 @@ const pages = {
 
 $(document).ready(() => {
   _showPage(pages.home)
+
+  // Display cached current user info
+  chrome.storage.sync.get([storageKeys.userInfo], data => {
+    _displayUserInfo(data[storageKeys.userInfo])
+  })
+
+  // Refresh the current user
   getCurrentUser()
-    .then(console.log)
+    .then(({ user }) => _displayUserInfo(user))
     .catch(console.log)
 })
+
+function _displayUserInfo(user) {
+  // Cache user info
+  let displayName = ''
+  let email = ''
+  if (user != null) {
+    displayName = user.displayName
+    email = user.email
+  }
+
+  chrome.storage.sync.set({ [storageKeys.userInfo]: {
+    displayName, email
+  }})
+
+  $('#current-user-name').text(displayName)
+  $('#current-user-email').text(email)
+}
 
 function _showPage(page) {
   _hideAllPages()

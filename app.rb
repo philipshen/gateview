@@ -57,3 +57,23 @@ get '/test-twitter' do
 
   redirect 'https://www.twitter.com/home', 'hello'
 end
+
+get '/test-slack' do
+  uri = URI.parse('https://gather1.slack.com')
+  request = Net::HTTP::Post.new(uri)
+  request.content_type = 'application/x-www-form-urlencoded'
+  request['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36'
+  request.set_form_data(
+    :signin => 1,
+    :has_remember => 1,
+    :email => 'philipshen13@gmail.com',
+    :password => 'xfniJ!xqcl!9YK184#Qg!oO3MJJAg2ILS0^'
+  )
+
+  req_options = { use_ssl: uri.scheme == 'https' }
+  response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+    http.request(request)
+  end
+
+  return response.body
+end

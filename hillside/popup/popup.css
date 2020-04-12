@@ -1,5 +1,8 @@
 :root {
   --primary-color: #D94B0F;
+  --preferred-width: 300px;
+  --border-color: lightgray;
+  --padding-horz: 12px;
 }
 
 .icon-button {
@@ -35,12 +38,21 @@
 }
 
 body {
-  min-width: 300px;
+  min-width: var(--preferred-width);
   margin: 0;
 }
 
 h1 {
   font-weight: normal;
+}
+
+.section-heading {
+  font-size: 15px;
+  padding-left: var(--padding-horz);
+  padding-right: var(--padding-horz);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #EFEFEF;
 }
 
 #navbar {
@@ -66,4 +78,30 @@ h1 {
 
 #navbar-back-button {
   left: 4px;
+}
+
+#content {
+  overflow: auto;
+  max-height: 500px;
+}
+
+#current-user-info {
+  padding-left: var(--padding-horz);
+  padding-right: var(--padding-horz);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#current-user-name {
+  font-size: 20px;
+  margin: 0;
+  max-width: var(--preferred-width);
+  overflow-wrap: break-word;
+  margin-bottom: 4px;
+}
+
+#current-user-email {
+  margin: 0;
+  font-size: 15px;
 }

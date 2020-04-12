@@ -4,7 +4,8 @@
   "description": "Passwordless sign in for your team.",
   "manifest_version": 2,
   "permissions": [
-    "identity"
+    "identity",
+    "storage"
   ],
   "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://apis.google.com; object-src 'self';",
   "oauth2": {
