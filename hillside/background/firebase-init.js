@@ -1,11 +1,10 @@
-const config = {
-  apiKey: "AIzaSyDMPgK5aJvYJ5UAz_dclIeI8p2xm0waLoI",
-  authDomain: "peerx-2348a.firebaseapp.com",
-  databaseURL: "https://peerx-2348a.firebaseio.com",
-  projectId: "peerx-2348a",
-  storageBucket: "peerx-2348a.appspot.com",
-  messagingSenderId: "615277826043",
-  appId: "1:615277826043:web:9ab506f369ab05e101455e",
-  measurementId: "G-S2V90L8JSK"
+const firebaseConfig = {
+  apiKey: "AIzaSyDXb0YYUBdStMeSDXs837B5kmWQ6WyQlTo",
+  authDomain: "gateview-7bed1.firebaseapp.com",
+  databaseURL: "https://gateview-7bed1.firebaseio.com",
+  projectId: "gateview-7bed1",
+  storageBucket: "gateview-7bed1.appspot.com",
+  messagingSenderId: "764207558015",
+  appId: "1:764207558015:web:989dfb61c447efd6d93e4a"
 };
-const app = firebase.initializeApp(config)
+const app = firebase.initializeApp(firebaseConfig)

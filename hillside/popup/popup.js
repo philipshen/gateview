@@ -1,6 +1,6 @@
 const pages = {
-  login: {
-    htmlID: '#page-login',
+  home: {
+    htmlID: '#page-home',
     barButtons: [
       {
         icon: 'settings',
@@ -11,17 +11,16 @@ const pages = {
   settings: {
     htmlID: '#page-settings',
     title: 'Settings',
-    backButtonPage: 'login'
+    backButtonPage: 'home'
   }
 }
 
 $(document).ready(() => {
-  _showPage(pages.login)
+  _showPage(pages.home)
+  getCurrentUser()
+    .then(console.log)
+    .catch(console.log)
 })
-
-// chrome.identity.getAuthToken({ interactive: true }, token => {
-//   console.log(token)
-// })
 
 function _showPage(page) {
   _hideAllPages()
@@ -50,7 +49,6 @@ function _showPage(page) {
           ${button.icon}
         </button>
       `)
-
       buttonEl.click(button.onClick)
       barButtonContainer.append(buttonEl)
     })
