@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
+import AddAccountDialog from 'components/shared/dialogs/add-account-dialog'
 import ButtonBar from 'components/shared/button-bar'
 import { Button, List, ListItem, ListItemText, Typography, makeStyles } from '@material-ui/core'
 import { OpenInNew } from '@material-ui/icons'
@@ -30,6 +31,7 @@ function Accounts(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
+  const [addAccountDialogOpen, setAddAccountDialogOpen] = useState(true)
   
   // Temp dev flag
   const isInTeam = true
@@ -58,14 +60,23 @@ function Accounts(props) {
     return (
       <div>
         {isAdmin && 
-          <ButtonBar 
-            buttons={ [
-              {
-                title: 'Add Account',
-                onClick: () => console.log('Dialog')
-              }
-            ] }
-          />
+          <div>
+            <AddAccountDialog 
+              onAddAccount={ () => {
+                setAddAccountDialogOpen(false)
+              } }
+              onClose={ () => setAddAccountDialogOpen(false) }
+              open={ addAccountDialogOpen }
+            />
+            <ButtonBar 
+              buttons={ [
+                {
+                  title: 'Add Account',
+                  onClick: () => setAddAccountDialogOpen(true)
+                }
+              ] }
+            />
+          </div>
         }
         <List>
           {accounts.map(account => (

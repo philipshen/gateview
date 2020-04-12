@@ -26,7 +26,7 @@ function Team(props) {
   const classes = useStyles()
   const { actions } = props
   const [hasFetchedData, setHasFetchedData] = useState(false)
-  const [addTeamMemberDialogOpen, setAddTeamMemberDialogOpen] = useState(true)
+  const [addTeamMemberDialogOpen, setAddTeamMemberDialogOpen] = useState(false)
   
   if (!hasFetchedData) {
     setHasFetchedData(true)
@@ -59,7 +59,7 @@ function Team(props) {
         buttons={ [
           {
             title: 'Add Team Member',
-            onClick: () => console.log('Dialog')
+            onClick: () => setAddTeamMemberDialogOpen(true)
           }
         ] }
       />
