@@ -56,6 +56,7 @@ function Login(props) {
               .then(() => props.history.push('/home'))
               .catch(flashError)
           } }
+          style={ { color: 'white' } }
           variant='contained'
         >
           Sign In
