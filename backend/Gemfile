@@ -23,7 +23,7 @@ gem "faraday-cookie_jar"
 
 group :development do
   gem "awesome_print", "~> 1.8.0"
-  gem "better_errors", "~> 2.6.0"
+  gem "better_errors", "~> 2.8.0"
   gem "binding_of_caller", "~> 0.8.0"
   gem "bullet", "~> 6.1.0"
   gem "listen", "~> 3.2.1"
